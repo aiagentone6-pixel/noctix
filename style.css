@@ -1320,13 +1320,8 @@ a {
     display: block;
   }
   
-  .btn-connect span {
+  #btn-portal {
     display: none;
-  }
-  
-  .btn-connect {
-    padding: 0.8rem;
-    border-radius: 50%;
   }
   
   .section {

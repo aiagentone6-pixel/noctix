@@ -625,4 +625,16 @@
   .step-heading {
     font-size: 1.3rem;
   }
+  /* Keep navigation link visible and correctly aligned in the portal form page */
+  .navbar .nav-menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    flex-direction: row;
+    display: flex;
+    padding: 0;
+  }
 }
