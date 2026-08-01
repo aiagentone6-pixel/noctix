@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noctix - Whitelist & Airdrop Portal</title>
+  <meta name="description" content="Verify your social tasks and register your EVM wallet address to get whitelisted for the Noctix Genesis mint.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Global & Form Custom Stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/form.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="/public/logo.jpg" alt="Noctix Logo" class="logo-img">
+        <span class="logo-text">NOCTIX</span>
+      </a>
+      
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Interactive Grid Background -->
+  <div class="cyber-grid-container">
+    <canvas id="cyber-grid-canvas"></canvas>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Whitelist Portal Section -->
+  <main class="portal-container">
+    <div class="portal-card">
+      <div class="cyber-decor-top-left"></div>
+      <div class="cyber-decor-top-right"></div>
+      
+      <div class="portal-header">
+        <span class="portal-tag">Vanguard Mission</span>
+        <h1 class="portal-title">WHITELIST PORTAL</h1>
+        <p class="portal-desc">Verify your social tasks and submit your EVM address to secure your Genesis slot.</p>
+      </div>
+
+      <!-- Step Progress Bar -->
+      <div class="progress-bar-wrapper" id="progress-bar-wrapper">
+        <div class="progress-line-bg">
+          <div class="progress-line-fill" id="progress-line-fill"></div>
+        </div>
+        <div class="progress-steps">
+          <div class="progress-step-node active" data-node="1" title="Follow X">
+            <span class="node-num">1</span>
+            <i class="fa-solid fa-check node-check"></i>
+            <span class="node-label">Follow X</span>
+          </div>
+          <div class="progress-step-node" data-node="2" title="Like & RT">
+            <span class="node-num">2</span>
+            <i class="fa-solid fa-check node-check"></i>
+            <span class="node-label">Like & RT</span>
+          </div>
+          <div class="progress-step-node" data-node="3" title="Quote Tweet">
+            <span class="node-num">3</span>
+            <i class="fa-solid fa-check node-check"></i>
+            <span class="node-label">Quote</span>
+          </div>
+          <div class="progress-step-node" data-node="4" title="X Username">
+            <span class="node-num">4</span>
+            <i class="fa-solid fa-check node-check"></i>
+            <span class="node-label">Account</span>
+          </div>
+          <div class="progress-step-node" data-node="5" title="EVM Wallet">
+            <span class="node-num">5</span>
+            <i class="fa-solid fa-check node-check"></i>
+            <span class="node-label">Wallet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steps Content Panel -->
+      <div class="steps-panel" id="steps-panel">
+        
+        <!-- Step 1: Follow -->
+        <div class="step-content active" data-step="1">
+          <div class="step-icon-box">
+            <i class="fa-brands fa-x-twitter text-red"></i>
+          </div>
+          <h2 class="step-heading">Follow @noctixnft on X</h2>
+          <p class="step-instruction">Join our official Twitter/X community to stay updated on the Genesis mint and ecosystem releases.</p>
+          
+          <div class="task-action-box">
+            <a href="https://x.com/noctixnft" target="_blank" class="btn btn-task" id="link-follow">
+              <span>Follow @noctixnft</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="task-status-indicator" id="status-follow">
+              <i class="fa-solid fa-circle-notch fa-spin status-loading"></i>
+              <i class="fa-solid fa-circle-check status-success"></i>
+              <span class="status-text">Pending Action</span>
+            </div>
+          </div>
+
+          <div class="step-footer">
+            <div></div> <!-- Empty left spacer -->
+            <button class="btn btn-next" id="next-1" disabled>
+              <span>Continue</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Like & Retweet -->
+        <div class="step-content" data-step="2">
+          <div class="step-icon-box">
+            <i class="fa-solid fa-retweet text-red"></i>
+          </div>
+          <h2 class="step-heading">Like & Retweet Pinned Post</h2>
+          <p class="step-instruction">Show your support and help propagate the Crimson Realm by liking and retweeting our pinned announcement.</p>
+          
+          <div class="task-action-box">
+            <a href="https://x.com/noctixnft" target="_blank" class="btn btn-task" id="link-likert">
+              <span>Like & Retweet Post</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="task-status-indicator" id="status-likert">
+              <i class="fa-solid fa-circle-notch fa-spin status-loading"></i>
+              <i class="fa-solid fa-circle-check status-success"></i>
+              <span class="status-text">Pending Action</span>
+            </div>
+          </div>
+
+          <div class="step-footer">
+            <button class="btn btn-prev" id="prev-2">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span>Back</span>
+            </button>
+            <button class="btn btn-next" id="next-2" disabled>
+              <span>Continue</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Quote Tweet -->
+        <div class="step-content" data-step="3">
+          <div class="step-icon-box">
+            <i class="fa-solid fa-quote-left text-red"></i>
+          </div>
+          <h2 class="step-heading">Quote Tweet Announcement</h2>
+          <p class="step-instruction">Create a quote tweet sharing your excitement about the Genesis launch. Your participation will be verified.</p>
+          
+          <div class="task-action-box">
+            <a href="https://x.com/intent/tweet?text=Entering%20the%20Crimson%20Realm%20with%20%40noctixnft!%20Excited%20for%20the%20Genesis%20Mint%20%F0%9F%94%B4%20%23Noctix%20%23NFTs%20%23Web3&url=https%3A%2F%2Fx.com%2Fnoctixnft" target="_blank" class="btn btn-task" id="link-quote">
+              <span>Quote Tweet Post</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div class="task-status-indicator" id="status-quote">
+              <i class="fa-solid fa-circle-notch fa-spin status-loading"></i>
+              <i class="fa-solid fa-circle-check status-success"></i>
+              <span class="status-text">Pending Action</span>
+            </div>
+          </div>
+
+          <div class="step-footer">
+            <button class="btn btn-prev" id="prev-3">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span>Back</span>
+            </button>
+            <button class="btn btn-next" id="next-3" disabled>
+              <span>Continue</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 4: X Username -->
+        <div class="step-content" data-step="4">
+          <div class="step-icon-box">
+            <i class="fa-solid fa-user text-red"></i>
+          </div>
+          <h2 class="step-heading">Submit your X Username</h2>
+          <p class="step-instruction">Enter your X (Twitter) handle so our team can verify your social task activities.</p>
+          
+          <div class="input-container">
+            <div class="input-cyber-wrapper">
+              <span class="input-prefix">@</span>
+              <input type="text" id="x-username" placeholder="your_username" autocomplete="off" spellcheck="false">
+              <span class="input-border-glow"></span>
+            </div>
+            <p class="validation-error" id="error-username">Please enter a valid username (at least 3 characters without spaces).</p>
+          </div>
+
+          <div class="step-footer">
+            <button class="btn btn-prev" id="prev-4">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span>Back</span>
+            </button>
+            <button class="btn btn-next" id="next-4" disabled>
+              <span>Continue</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 5: EVM Wallet -->
+        <div class="step-content" data-step="5">
+          <div class="step-icon-box">
+            <i class="fa-brands fa-ethereum text-red"></i>
+          </div>
+          <h2 class="step-heading">Provide EVM Wallet Address</h2>
+          <p class="step-instruction">Enter your Ethereum-compatible wallet address where you'd like to receive your Whitelist allocation.</p>
+          
+          <div class="input-container">
+            <div class="input-cyber-wrapper">
+              <input type="text" id="evm-address" placeholder="0x..." autocomplete="off" spellcheck="false">
+              <span class="input-border-glow"></span>
+            </div>
+            <p class="validation-error" id="error-address">Please enter a valid EVM wallet address (starts with 0x and is 42 hex characters).</p>
+          </div>
+
+          <div class="step-footer">
+            <button class="btn btn-prev" id="prev-5">
+              <i class="fa-solid fa-arrow-left"></i>
+              <span>Back</span>
+            </button>
+            <button class="btn btn-submit" id="btn-submit" disabled>
+              <span>Submit Registration</span>
+              <i class="fa-solid fa-circle-check"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 6: Success -->
+        <div class="step-content" data-step="6">
+          <div class="step-icon-box success-spin">
+            <i class="fa-solid fa-circle-check text-green"></i>
+          </div>
+          <h2 class="step-heading">Registration Submitted!</h2>
+          <p class="step-instruction">Your application has been logged on the Crimson Core Network. Our automated verification engine is analyzing your tasks.</p>
+          
+          <div class="summary-box">
+            <h3 class="summary-title">SUBMISSION RECEIPT</h3>
+            <div class="summary-row">
+              <span class="summary-label">X Handle</span>
+              <span class="summary-value" id="summary-username">@loading</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">EVM Wallet</span>
+              <span class="summary-value font-mono" id="summary-address">0x0000...0000</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Status</span>
+              <span class="summary-value badge-pending">PENDING VERIFICATION</span>
+            </div>
+          </div>
+
+          <div class="step-footer flex-center-only">
+            <a href="index.html" class="btn btn-connect">
+              <i class="fa-solid fa-house"></i>
+              <span>Return to Landing Page</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Already Registered View -->
+        <div class="step-content" data-step="already-registered">
+          <div class="step-icon-box">
+            <i class="fa-solid fa-shield-halved text-red"></i>
+          </div>
+          <h2 class="step-heading">Already Whitelisted</h2>
+          <p class="step-instruction">Your address is already registered on our databases. Multiple entries from the same client are restricted.</p>
+          
+          <div class="summary-box">
+            <h3 class="summary-title">REGISTERED PROFILE</h3>
+            <div class="summary-row">
+              <span class="summary-label">X Handle</span>
+              <span class="summary-value" id="reg-username">@loading</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">EVM Wallet</span>
+              <span class="summary-value font-mono" id="reg-address">0x0000...0000</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Status</span>
+              <span class="summary-value badge-verified">CONFIRMED WHITELIST</span>
+            </div>
+          </div>
+
+          <div class="step-footer flex-center-only">
+            <a href="index.html" class="btn btn-connect">
+              <i class="fa-solid fa-house"></i>
+              <span>Return to Landing Page</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="/public/logo.jpg" alt="Noctix Logo" class="footer-logo">
+        <h3>NOCTIX</h3>
+        <p>Rise of the Crimson Core. A premium Anime & Cyberpunk Collection.</p>
+      </div>
+      <div class="footer-info">
+        <p class="copyright">&copy; 2026 Noctix Project. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Modules -->
+  <script type="module" src="/form.js"></script>
+</body>
+</html>

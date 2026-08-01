@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noctix - Enter the Crimson Realm</title>
+  <meta name="description" content="Noctix is a premium anime-style cyberpunk NFT collection. Explore the story, view the collection, and mint your avatar.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="/public/logo.jpg" alt="Noctix Logo" class="logo-img">
+        <span class="logo-text">NOCTIX</span>
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#roadmap" class="nav-link">Roadmap</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="form.html" class="btn btn-connect" id="btn-portal">Early Access</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Scroll Animation Hero Section -->
+  <div class="scroll-wrapper" id="scroll-wrapper">
+    <div class="sticky-video-container" id="video-container">
+      <video class="bg-video" id="hero-video" autoplay loop muted playsinline>
+        <source src="/public/video.mp4" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+      </video>
+      <div class="video-overlay" id="video-overlay"></div>
+      
+      <!-- Zoom Hero Content -->
+      <div class="hero-content" id="hero-content">
+        <h1 class="hero-title" id="hero-title">NOCTIX</h1>
+        <p class="hero-tagline" id="hero-tagline">Enter the Crimson Realm</p>
+        <a href="form.html" class="btn btn-connect hero-cta" id="hero-portal-btn">Join Early Access</a>
+        <div class="scroll-indicator" id="scroll-indicator">
+          <span class="mouse">
+            <span class="wheel"></span>
+          </span>
+          <span class="scroll-text">Scroll Down to Zoom Out</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content (Fades in and scrolls over background video) -->
+  <main class="main-content">
+    
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+      <div class="container grid-2">
+        <div class="reveal-el reveal-left">
+          <span class="section-tag">Welcome to Noctix</span>
+          <h2 class="section-title">Lore of the Crimson Avatars</h2>
+          <p class="section-desc">
+            Di bawah bayang-bayang kota Cyber-Tokyo yang abadi, faksi elit pemberontak yang dikenal sebagai <strong>Noctix</strong> bangkit. Menggunakan kekuatan kuno Crimson Core, masing-masing dari 8.888 avatar legendaris ini memiliki kekuatan unik untuk mengendalikan kegelapan dan teknologi tingkat tinggi.
+          </p>
+          <p class="section-desc">
+            Noctix bukan sekadar koleksi seni digital; mereka adalah kunci gerbang menuju dunia Crimson Realm, ruang metaverse terdesentralisasi di mana seni, teknologi, dan kebebasan menyatu.
+          </p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num">8,888</span>
+              <span class="stat-label">Unique Avatars</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">150+</span>
+              <span class="stat-label">Handdrawn Traits</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">ERC-721</span>
+              <span class="stat-label">Token Standard</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="reveal-el reveal-right flex-center">
+          <div class="nft-showcase-frame">
+            <img src="/public/banner.jfif" alt="Noctix Banner" class="about-showcase-img">
+            <div class="frame-border"></div>
+            <div class="frame-tag">NX_GENESIS_01</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="text-center reveal-el reveal-up">
+          <span class="section-tag">The Archetypes</span>
+          <h2 class="section-title">Genesis Collection</h2>
+          <p class="section-desc-center">
+            Intip beberapa faksi utama dari dunia Noctix. Setiap karakter diciptakan dengan visual beresolusi tinggi, siap digunakan sebagai avatar di metaverse.
+          </p>
+        </div>
+        
+        <div class="gallery-grid">
+          <!-- Card 1 -->
+          <div class="gallery-card reveal-el reveal-up" style="--anim-delay: 0.1s">
+            <div class="card-img-wrapper">
+              <img src="/public/nft_1.png" alt="Noctix NFT 1" class="gallery-img">
+              <div class="card-overlay">
+                <a href="#" class="view-opensea-btn"><i class="fa-brands fa-ethereum"></i> Opensea</a>
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="card-header-row">
+                <span class="nft-id">NX_PHOENIX #4829</span>
+                <span class="nft-price"><i class="fa-brands fa-ethereum"></i> 0.08 ETH</span>
+              </div>
+              <p class="nft-traits">Faksi: Crimson Vanguard | Hair: Spiky Red | Weapon: Plasma Scythe</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="gallery-card reveal-el reveal-up" style="--anim-delay: 0.2s">
+            <div class="card-img-wrapper">
+              <img src="/public/nft_2.png" alt="Noctix NFT 2" class="gallery-img">
+              <div class="card-overlay">
+                <a href="#" class="view-opensea-btn"><i class="fa-brands fa-ethereum"></i> Opensea</a>
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="card-header-row">
+                <span class="nft-id">NX_CYRA #1944</span>
+                <span class="nft-price"><i class="fa-brands fa-ethereum"></i> 0.12 ETH</span>
+              </div>
+              <p class="nft-traits">Faksi: Neo-Shogun | Eyes: Cybernetic | Suit: Sleek Nano-Tech</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="gallery-card reveal-el reveal-up" style="--anim-delay: 0.3s">
+            <div class="card-img-wrapper">
+              <img src="/public/nft_3.png" alt="Noctix NFT 3" class="gallery-img">
+              <div class="card-overlay">
+                <a href="#" class="view-opensea-btn"><i class="fa-brands fa-ethereum"></i> Opensea</a>
+              </div>
+            </div>
+            <div class="card-info">
+              <div class="card-header-row">
+                <span class="nft-id">NX_KAGE #8872</span>
+                <span class="nft-price"><i class="fa-brands fa-ethereum"></i> 0.15 ETH</span>
+              </div>
+              <p class="nft-traits">Faksi: Shadow Blade | Hair: Long Crimson | Armor: Runed Carbon</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="section roadmap-section" id="roadmap">
+      <div class="container">
+        <div class="text-center reveal-el reveal-up">
+          <span class="section-tag">Our Journey</span>
+          <h2 class="section-title">Project Roadmap</h2>
+          <p class="section-desc-center">
+            Rencana matang untuk membawa ekosistem Noctix terus tumbuh berkelanjutan dalam jangka panjang.
+          </p>
+        </div>
+
+        <div class="roadmap-timeline">
+          <!-- Phase 1 -->
+          <div class="roadmap-item left reveal-el reveal-left">
+            <div class="roadmap-marker">01</div>
+            <div class="roadmap-content">
+              <span class="phase-tag done">Selesai</span>
+              <h3>Phase 1: Genesis Mint</h3>
+              <p>Peluncuran 8,888 NFT avatar unik Noctix di jaringan Ethereum. Pembentukan komunitas inti dan verifikasi smart contract.</p>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="roadmap-item right reveal-el reveal-right">
+            <div class="roadmap-marker">02</div>
+            <div class="roadmap-content">
+              <span class="phase-tag active">Sedang Berjalan</span>
+              <h3>Phase 2: Staking & $NOC Tokens</h3>
+              <p>Meluncurkan dashboard staking bagi pemegang Noctix NFT untuk mendapatkan token utilitas harian $NOC (Noctix Core Token).</p>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="roadmap-item left reveal-el reveal-left">
+            <div class="roadmap-marker">03</div>
+            <div class="roadmap-content">
+              <span class="phase-tag future">Q4 2026</span>
+              <h3>Phase 3: Crimson Metaverse Space</h3>
+              <p>Membuka portal interaktif 3D di mana avatar Noctix Anda dapat dieksplorasi secara virtual dan berinteraksi di ruang virtual eksklusif.</p>
+            </div>
+          </div>
+
+          <!-- Phase 4 -->
+          <div class="roadmap-item right reveal-el reveal-right">
+            <div class="roadmap-marker">04</div>
+            <div class="roadmap-content">
+              <span class="phase-tag future">Q2 2027</span>
+              <h3>Phase 4: Tactical RPG Game</h3>
+              <p>Pengembangan game pertarungan taktis berbasis giliran (turn-based tactical RPG) di mana NFT Anda menjadi karakter yang dapat dimainkan dengan statistik unik.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="text-center reveal-el reveal-up">
+          <span class="section-tag">FAQ</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc-center">
+            Punya pertanyaan mengenai projek kami? Temukan jawaban Anda di bawah ini.
+          </p>
+        </div>
+
+        <div class="faq-list reveal-el reveal-up">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Apa itu Noctix NFT?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Noctix adalah proyek seni digital berupa 8,888 avatar anime cyberpunk unik yang disimpan di blockchain Ethereum. Setiap avatar memiliki hak cipta dan utilitas di metaverse kami.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Kapan koleksi Genesis dirilis?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Koleksi Genesis akan dirilis sesuai jadwal roadmap kami di kuartal akhir tahun ini. Ikuti Discord dan X resmi kami untuk pengumuman tanggal pastinya.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Bagaimana cara mendapatkan avatar Noctix?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Anda dapat membelinya di pasar sekunder seperti OpenSea setelah rilis resmi, atau berpartisipasi dalam event komunitas kami untuk kesempatan memenangkan giveaway.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Bagaimana kegunaan token $NOC kelak?</span>
+              <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Token $NOC akan digunakan sebagai mata uang ekosistem untuk kustomisasi avatar, mencetak item in-game, dan melakukan voting tata kelola (governance) dalam proyek.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="/public/logo.jpg" alt="Noctix Logo" class="footer-logo">
+        <h3>NOCTIX</h3>
+        <p>Rise of the Crimson Core. A premium Anime & Cyberpunk Collection.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="social-link" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="#" class="social-link" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#" class="social-link" aria-label="OpenSea"><i class="fa-solid fa-ship"></i></a>
+      </div>
+      <div class="footer-info">
+        <p class="contract-address">Smart Contract: <code>0x8B32...2e4D</code></p>
+        <p class="copyright">&copy; 2026 Noctix Project. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script File -->
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
