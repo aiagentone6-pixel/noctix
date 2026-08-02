@@ -1,5 +1,5 @@
 // Configure your Google Sheets API Web App URL here
-const GOOGLE_SCRIPT_URL = "";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxXPEQ2x5jFk_kKbGtw2iQyfUab1VvU-S65UEQp7cp9PNZyyM49mq2XM2Cv0lKEgAFk/exec";
 
 document.addEventListener('DOMContentLoaded', () => {
   
