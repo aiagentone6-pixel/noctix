@@ -354,31 +354,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "") {
         fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
-          mode: 'cors',
+          mode: 'no-cors',
           headers: {
             'Content-Type': 'text/plain;charset=utf-8' // Crucial to bypass CORS preflight check on Google Apps Script
           },
           body: JSON.stringify(payload)
         })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(data => {
-          if (data.status === 'success') {
-            completeLocalSubmission();
-          } else {
-            alert('Failed to register: ' + (data.message || 'Unknown error'));
-            btnSubmit.disabled = false;
-            btnSubmit.innerHTML = originalText;
-          }
+        .then(() => {
+          // In no-cors mode, the promise resolves successfully when the request is sent, bypassing CORS redirect constraints.
+          completeLocalSubmission();
         })
         .catch(error => {
           console.error('Error submitting to Google Sheets:', error);
-          // If there's an error (e.g. CORS block or network loss), still register locally but alert
-          alert('Submission error. Please ensure your Google Script URL is configured correctly with the instructions in SETUP_GOOGLE_SHEETS.md.');
+          alert('Submission error. Please ensure your network connection is active and try again.');
           btnSubmit.disabled = false;
           btnSubmit.innerHTML = originalText;
         });
