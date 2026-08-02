@@ -1,6 +1,5 @@
-/* ==========================================================================
-   Noctix NFT Whitelist Portal Script (Full English)
-   ========================================================================== */
+// Configure your Google Sheets API Web App URL here
+const GOOGLE_SCRIPT_URL = "";
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -320,13 +319,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <span>Registering Core...</span>
       `;
 
-      setTimeout(() => {
+      const payload = {
+        username: state.username,
+        evmAddress: state.evmAddress,
+        timestamp: new Date().toISOString()
+      };
+
+      const completeLocalSubmission = () => {
         // Save to localStorage
-        const payload = {
-          username: state.username,
-          evmAddress: state.evmAddress,
-          timestamp: new Date().toISOString()
-        };
         localStorage.setItem('noctix_whitelist_user', JSON.stringify(payload));
 
         // Update success page receipt
@@ -348,7 +348,46 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show step 6 (Success)
         currentStep = 6;
         updateStepsUI();
-      }, 1500);
+      };
+
+      // Send to Google Sheets if configured
+      if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "") {
+        fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8' // Crucial to bypass CORS preflight check on Google Apps Script
+          },
+          body: JSON.stringify(payload)
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data.status === 'success') {
+            completeLocalSubmission();
+          } else {
+            alert('Failed to register: ' + (data.message || 'Unknown error'));
+            btnSubmit.disabled = false;
+            btnSubmit.innerHTML = originalText;
+          }
+        })
+        .catch(error => {
+          console.error('Error submitting to Google Sheets:', error);
+          // If there's an error (e.g. CORS block or network loss), still register locally but alert
+          alert('Submission error. Please ensure your Google Script URL is configured correctly with the instructions in SETUP_GOOGLE_SHEETS.md.');
+          btnSubmit.disabled = false;
+          btnSubmit.innerHTML = originalText;
+        });
+      } else {
+        // Fallback for local testing (simulated API write delay)
+        setTimeout(() => {
+          completeLocalSubmission();
+        }, 1500);
+      }
     });
   }
 
