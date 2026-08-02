@@ -1075,6 +1075,93 @@ a {
   font-size: 0.95rem;
 }
 
+.roadmap-bullets {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.roadmap-bullets li {
+  position: relative;
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  padding-left: 0.2rem;
+  text-align: left;
+}
+
+.roadmap-bullets li::before {
+  content: "▪";
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  position: absolute;
+  left: -1.1rem;
+  top: -1px;
+}
+
+/* Why Noctix Section */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.why-card {
+  background: var(--color-card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 2.5rem 1.8rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.why-card:hover {
+  border-color: rgba(217, 4, 41, 0.25);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-neon-red);
+}
+
+.why-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(217, 4, 41, 0.08);
+  border: 1px solid rgba(217, 4, 41, 0.2);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 0 10px rgba(217, 4, 41, 0.1);
+}
+
+.why-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: white;
+}
+
+.why-card p {
+  color: var(--color-text-dim);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive updates for why grid */
+@media (max-width: 992px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* FAQ Section */
 .faq-list {
   max-width: 800px;
